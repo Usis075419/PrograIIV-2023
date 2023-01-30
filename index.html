@@ -1,0 +1,66 @@
+<!DOCTYPE html><!--Definicion de tipo de documento-->
+<html lang="en"><!--Apertura de la pagina html-->
+<head><!--Encabezado de la pagina de html-->
+    <meta charset="UTF-8"><!--Codificacion de caracteres especiales-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"><!--Internet Explorer y Edge-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--Para que la app sea compatible con dispositivos moviles-->
+    <title>Primer proyecto de HTML</title>
+</head>
+<body><!--Contenido de la pagina-->
+    <h1>Bienvenidos a Programacion IV</h1>
+    <H3>Hola Mundo</H3>
+    <p>Esto es un parrafo: aqui van ir muchas lineas de texto</p>
+    <form name="frmAlumnos" id="frmAlumnos">
+        <label for="txtCodigoAlumno">Codigo:</label>
+        <input required title="Ingrese un codigo de estudiante valido" 
+            pattern="^[US|SM]{2}[IS|LE]{2}[0-9]{6}"
+            type="text" name="txtCodigoAlumno" id="txtCodigoAlumno">
+
+        <label for="txtNombreAlumno">Nombre: </label>
+        <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
+            type="text" name="txtNombreAlumno" id="txtNombreAlumno">
+
+        <label for="txtDireccion">Direccion: </label>
+        <input required pattern="[A-Za-zÑñáéíóú-1-0-a-z ]{3,75}"
+                type="text" name="Direccion" id="txtDireccion">
+
+        <br>
+        <h2></h2>
+        <label for="txtMunicipio">Municipio: </label>
+        <input required pattern="[A-Za-zÑñáéíóú-1-0 ]{3,75}"
+                  type="text" name="Municipio" id="txtMunicipio">
+
+        <label for="txtDepartamento">Departamento: </label>
+        <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
+                type="text" name="Departamento" id="txtDepartamento">
+        
+        <label for="txtTelefono">Telefono: </label>
+        <input required pattern="[1-0 ]{3,20}"
+                 type="text" name="Telefono" id="txtTelefono">
+        <br>
+        <h2></h2>
+        <label for="txtFechaDeNacimiento">Fecha de Nacimiento: </label>
+        <input required pattern="[A-Za-z-1-0-/- ]{3,75}"
+                type="text" name="Fecha de Nacimiento" id="txtFechaDeNacimiento">
+                
+        <label for="txtSexo">Sexo </label>
+        <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
+                type="text" name="Sexo" id="txtSexo">
+
+        <input type="submit" value="Guardar Datos">
+    </form>
+    <script>
+        //DOM -> Modelo de Objetos del Documento
+        let $frmAlumno = document.querySelector("#frmAlumnos");
+        console.log( $frmAlumno, frmAlumnos );
+        
+        frmAlumnos.addEventListener('submit',e=>{
+            e.preventDefault();
+
+            console.log( txtCodigoAlumno.value, txtNombreAlumno.value, txtDireccion.value,
+            txtMunicipio.value, txtDepartamento.value, txtTelefono.value, txtFechaDeNacimiento.value,
+            txtSexo.value);
+        });
+    </script>
+</body>
+</html>
